@@ -63,10 +63,10 @@ resource "tfe_policy_set" "production" {
     "${tfe_sentinel_policy.aws-restrict-instance-type-prod.id}",
   ]
 
-
-  workspace_external_ids = [
-    "${local.workspaces["${var.use_case_name}-production"]}",
-  ]
+  //
+  // workspace_external_ids = [
+  //   "${local.workspaces["${var.use_case_name}-production"]}",
+  // ]
 }
 
 resource "tfe_policy_set" "development" {
@@ -79,9 +79,9 @@ resource "tfe_policy_set" "development" {
     "${tfe_sentinel_policy.allowed-working-hours.id}",
   ]
 
-  workspace_external_ids = [
-    "${local.workspaces["${var.use_case_name}-development"]}",
-  ]
+  // workspace_external_ids = [
+  //   "${local.workspaces["${var.use_case_name}-development"]}",
+  // ]
 }
 
 resource "tfe_policy_set" "staging" {
@@ -93,9 +93,9 @@ resource "tfe_policy_set" "staging" {
     "${tfe_sentinel_policy.aws-restrict-instance-type-stage.id}",
   ]
 
-  workspace_external_ids = [
-    "${local.workspaces["${var.use_case_name}-staging"]}",
-  ]
+  // workspace_external_ids = [
+  //   "${local.workspaces["${var.use_case_name}-staging"]}",
+  // ]
 }
 
 resource "tfe_policy_set" "sentinel" {
@@ -107,9 +107,9 @@ resource "tfe_policy_set" "sentinel" {
     "${tfe_sentinel_policy.tfe_policies_only.id}",
   ]
 
-  workspace_external_ids = [
-    "${local.workspaces["${var.self_name}"]}",
-  ]
+  // workspace_external_ids = [
+  //   "${local.workspaces["${var.self_name}"]}",
+  // ]
 }
 
 # Test/experimental policies:
